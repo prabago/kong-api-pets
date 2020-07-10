@@ -1,0 +1,82 @@
+_format_version: "1.1"
+_info:
+  select_tags:
+  - api-petstore-v2
+services:
+  - name: Swagger_Petstore
+    url: https://petstore.swagger.io/v2
+    plugins: []
+    routes:
+      - tags:
+          -  api-petstore-v2
+        name: Swagger_Petstore-path-put
+        methods:
+          - PUT
+        paths:
+          - /v2/pet
+        strip_path: false
+      - tags:
+          -  api-petstore-v2
+        name: Swagger_Petstore-path_1-post
+        methods:
+          - POST
+        paths:
+          - /v2/pet
+        strip_path: false
+      - tags:
+          -  api-petstore-v2
+        name: Swagger_Petstore-path_2-get
+        methods:
+          - GET
+        paths:
+          - /v2/pet/findByStatus
+        strip_path: false
+      - tags:
+          -  api-petstore-v2
+        name: Swagger_Petstore-path_3-get
+        methods:
+          - GET
+        paths:
+          - /v2/pet/findByTags
+        strip_path: false
+      - tags:
+          -  api-petstore-v2
+        name: Swagger_Petstore-path_4-get
+        methods:
+          - GET
+        paths:
+          - /v2/pet/(?<petId>\S+)$
+        strip_path: false
+      - tags:
+          -  api-petstore-v2
+        name: Swagger_Petstore-path_5-post
+        methods:
+          - POST
+        paths:
+          - /v2/pet/(?<petId>\S+)$
+        strip_path: false
+      - tags:
+          -  api-petstore-v2
+        name: Swagger_Petstore-path_6-delete
+        methods:
+          - DELETE
+        paths:
+          - /v2/pet/(?<petId>\S+)$
+        strip_path: false
+      - tags:
+          -  api-petstore-v2
+        name: Swagger_Petstore-path_7-post
+        methods:
+          - POST
+        paths:
+          - /v2/pet/(?<petId>\S+)/uploadImage$
+        strip_path: false
+    tags:
+      -  api-petstore-v2
+upstreams:
+  - name: Swagger_Petstore
+    targets:
+      - target: petstore.swagger.io:443
+      - target: petstore.swagger.io:80
+    tags:
+      -  api-petstore-v2
