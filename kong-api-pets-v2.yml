@@ -5,7 +5,7 @@ _info:
   - api-petstore-v2
 services:
   - name: Swagger_Petstore
-    url: https://petstore.swagger.io/v2
+    url: http://petstore.swagger.io
     plugins: []
     routes:
       - tags:
@@ -77,7 +77,6 @@ services:
 upstreams:
   - name: Swagger_Petstore
     targets:
-      - target: petstore.swagger.io:443
       - target: petstore.swagger.io:80
     tags:
       -  api-petstore-v2
